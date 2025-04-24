@@ -10,7 +10,8 @@
     "lint:fix": "next lint --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "postinstall": "husky"
+    "postinstall": "husky",
+    "commit": "git-cz"
   },
   "dependencies": {
     "next": "15.3.1",
@@ -26,6 +27,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@typescript-eslint/parser": "^8.31.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
     "eslint-plugin-tailwindcss": "^3.18.0",
@@ -35,5 +38,10 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.1.4",
     "typescript": "^5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
