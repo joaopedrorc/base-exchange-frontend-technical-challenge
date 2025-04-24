@@ -29,9 +29,10 @@ Abra o caminho [http://localhost:3000](http://localhost:3000) com o seu browser 
 
 ### Etapa 0: Setup Inicial
 
-- [ ] Criar projeto com Next.js 15 + TypeScript
-- [ ] Configurar ESLint, Prettier e TailwindCSS
-- [ ] Instalar libs: `clsx`, `zod`, `react-hook-form`, `date-fns`
+- [x] Criar projeto com Next.js 15 + TypeScript
+- [x] Configurar ESLint, Prettier e TailwindCSS
+- [x] Configurar Commitlint, Husky e Commitizen
+- [ ] Instalar libs: `clsx`, `zod`, `react-hook-form`, `shadcn/ui`
 - [ ] Criar estrutura inicial de pastas (`/app`, `/components`, `/mocks`, `/types`, etc)
 
 ---
