@@ -40,7 +40,7 @@ Abra o caminho [http://localhost:3000](http://localhost:3000) com o seu browser 
 ### Etapa 1: Mock de API
 
 - [ ] Configurar mock com MSW ou mocks locais
-- [ ] `GET /orders`: listagem de ordens
+- [x] `GET /orders`: listagem de ordens
 - [ ] `GET /orders/:id`: detalhes da ordem
 - [ ] `GET /orders/:id/history`: histórico de status
 - [ ] `POST /orders`: criação de ordem
@@ -51,10 +51,10 @@ Abra o caminho [http://localhost:3000](http://localhost:3000) com o seu browser 
 
 ### Etapa 2: Visualização de Ordens
 
-- [ ] Criar página `/app/orders/page.tsx`
-- [ ] Criar `OrderTable` com colunas: ID, Instrumento, Lado, Preço, Quantidade, Restante, Status, Data/Hora
-- [ ] Filtros: ID, instrumento, status, lado, data
-- [ ] Ordenação e paginação
+- [x] Criar página `/app/orders/page.tsx`
+- [x] Criar `OrderTable` com colunas: ID, Instrumento, Lado, Preço, Quantidade, Restante, Status, Data/Hora
+- [x] Filtros: ID, instrumento, status, lado, data
+- [x] Ordenação e paginação
 - [ ] Componentes auxiliares (Badges, Filtros, Skeletons)
 
 ---
