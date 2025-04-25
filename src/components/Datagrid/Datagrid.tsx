@@ -36,6 +36,7 @@ export function Datagrid<TData, TValue>({
 }: DatagridProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [selectedRow, setSelectedRow] = useState<TData | null>(null);
 
   const table = useReactTable({
     data,
@@ -51,6 +52,8 @@ export function Datagrid<TData, TValue>({
       columnFilters,
     },
   });
+
+  // Send to Order details page and fetch all details from that order
 
   return (
     <div>
@@ -144,6 +147,10 @@ export function Datagrid<TData, TValue>({
 
       <h2 className="bold mb-4 text-2xl">Tabela de operações</h2>
 
+      <div className="text-muted-foreground flex-1 text-sm">
+        Selecione uma operação clicando em cima da linha desejada.
+      </div>
+
       <div className="rounded-md border">
         <Table>
           <TableHeader>
@@ -166,28 +173,40 @@ export function Datagrid<TData, TValue>({
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && 'selected'}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))
+              table.getRowModel().rows.map((row) => {
+                const isSelected = selectedRow === row.original;
+                return (
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected() && 'selected'}
+                    className={
+                      isSelected
+                        ? 'cursor-pointer bg-slate-800'
+                        : 'cursor-pointer'
+                    }
+                    onClick={() => setSelectedRow(row.original)}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell
+                        key={cell.id}
+                        className={isSelected ? 'text-white' : 'text-oklab'}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                );
+              })
             ) : (
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  No results.
+                  Sem resultados.
                 </TableCell>
               </TableRow>
             )}
@@ -201,7 +220,7 @@ export function Datagrid<TData, TValue>({
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
-          Previous
+          Anterior
         </Button>
         <Button
           variant="outline"
@@ -209,7 +228,7 @@ export function Datagrid<TData, TValue>({
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >
-          Next
+          Próxima
         </Button>
       </div>
     </div>
