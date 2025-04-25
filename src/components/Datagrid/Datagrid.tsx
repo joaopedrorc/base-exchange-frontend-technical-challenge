@@ -24,6 +24,7 @@ import { Button } from '../ui/button';
 import { useState } from 'react';
 import { Input } from '../ui/input';
 import { Label } from '@radix-ui/react-label';
+import { useRouter } from 'next/navigation';
 
 interface DatagridProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -37,7 +38,7 @@ export function Datagrid<TData, TValue>({
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [selectedRow, setSelectedRow] = useState<TData | null>(null);
-
+  const router = useRouter();
   const table = useReactTable({
     data,
     columns,
@@ -52,8 +53,6 @@ export function Datagrid<TData, TValue>({
       columnFilters,
     },
   });
-
-  // Send to Order details page and fetch all details from that order
 
   return (
     <div>
@@ -181,10 +180,13 @@ export function Datagrid<TData, TValue>({
                     data-state={row.getIsSelected() && 'selected'}
                     className={
                       isSelected
-                        ? 'cursor-pointer bg-slate-800'
-                        : 'cursor-pointer'
+                        ? 'cursor-pointer bg-slate-800 hover:bg-slate-700'
+                        : 'cursor-pointer hover:bg-slate-800 hover:text-white'
                     }
-                    onClick={() => setSelectedRow(row.original)}
+                    onClick={() => {
+                      setSelectedRow(row.original);
+                      router.push(`/order/${row.original.id}`);
+                    }}
                   >
                     {row.getVisibleCells().map((cell) => (
                       <TableCell

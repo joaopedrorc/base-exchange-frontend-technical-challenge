@@ -7,7 +7,8 @@
     "amount": 100,
     "amountLeft": 100,
     "status": "Aberta",
-    "dateAndTime": "2025-04-24 09:15:32"
+    "dateAndTime": "2025-04-24 09:15:32",
+    "history": ["Pedido criado em 2025-04-24 09:15:32"]
   },
   {
     "id": "ORD-0002",
@@ -17,7 +18,11 @@
     "amount": 150,
     "amountLeft": 50,
     "status": "Parcial",
-    "dateAndTime": "2025-04-24 10:42:11"
+    "dateAndTime": "2025-04-24 10:42:11",
+    "history": [
+      "Pedido criado em 2025-04-24 10:42:11",
+      "Pedido parcial em 2025-04-24 10:42:11"
+    ]
   },
   {
     "id": "ORD-0003",
@@ -27,7 +32,11 @@
     "amount": 200,
     "amountLeft": 0,
     "status": "Executada",
-    "dateAndTime": "2025-04-23 16:03:45"
+    "dateAndTime": "2025-04-23 16:03:45",
+    "history": [
+      "Pedido criado em 2025-04-23 16:03:45",
+      "Pedido executado em 2025-04-23 16:03:45"
+    ]
   },
   {
     "id": "ORD-0004",
@@ -37,7 +46,11 @@
     "amount": 300,
     "amountLeft": 0,
     "status": "Cancelada",
-    "dateAndTime": "2025-04-22 13:20:17"
+    "dateAndTime": "2025-04-22 13:20:17",
+    "history": [
+      "Pedido criado em 2025-04-22 13:20:17",
+      "Pedido cancelado em 2025-04-22 13:20:17"
+    ]
   },
   {
     "id": "ORD-0005",
@@ -47,76 +60,102 @@
     "amount": 80,
     "amountLeft": 20,
     "status": "Parcial",
-    "dateAndTime": "2025-04-24 11:01:55"
+    "dateAndTime": "2025-04-24 11:01:55",
+    "history": [
+      "Pedido criado em 2025-04-24 11:01:55",
+      "Pedido parcial em 2025-04-24 11:01:55"
+    ]
   },
   {
-    "id": "ORD-0005",
-    "asset": "BBAS3",
-    "side": "Compra",
-    "price": "45,10",
-    "amount": 80,
-    "amountLeft": 20,
-    "status": "Parcial",
-    "dateAndTime": "2025-04-24 11:01:55"
+    "id": "ORD-0006",
+    "asset": "BBSE3",
+    "side": "Venda",
+    "price": "27,30",
+    "amount": 500,
+    "amountLeft": 0,
+    "status": "Executada",
+    "dateAndTime": "2025-04-23 14:47:09",
+    "history": [
+      "Pedido criado em 2025-04-23 14:47:09",
+      "Pedido executado em 2025-04-23 14:47:09"
+    ]
   },
   {
-    "id": "ORD-0005",
-    "asset": "BBAS3",
+    "id": "ORD-0007",
+    "asset": "ABEV3",
     "side": "Compra",
-    "price": "45,10",
-    "amount": 80,
-    "amountLeft": 20,
-    "status": "Parcial",
-    "dateAndTime": "2025-04-24 11:01:55"
+    "price": "14,50",
+    "amount": 250,
+    "amountLeft": 250,
+    "status": "Aberta",
+    "dateAndTime": "2025-04-24 08:10:18",
+    "history": ["Pedido criado em 2025-04-24 08:10:18"]
   },
   {
-    "id": "ORD-0005",
-    "asset": "BBAS3",
-    "side": "Compra",
-    "price": "45,10",
-    "amount": 80,
-    "amountLeft": 20,
+    "id": "ORD-0008",
+    "asset": "ITSA4",
+    "side": "Venda",
+    "price": "9,80",
+    "amount": 600,
+    "amountLeft": 300,
     "status": "Parcial",
-    "dateAndTime": "2025-04-24 11:01:55"
+    "dateAndTime": "2025-04-23 16:45:20",
+    "history": [
+      "Pedido criado em 2025-04-23 16:45:20",
+      "Pedido parcial em 2025-04-23 16:45:20"
+    ]
   },
   {
-    "id": "ORD-0005",
-    "asset": "BBAS3",
+    "id": "ORD-0009",
+    "asset": "WEGE3",
     "side": "Compra",
-    "price": "45,10",
-    "amount": 80,
-    "amountLeft": 20,
-    "status": "Parcial",
-    "dateAndTime": "2025-04-24 11:01:55"
+    "price": "45,25",
+    "amount": 400,
+    "amountLeft": 0,
+    "status": "Executada",
+    "dateAndTime": "2025-04-22 12:30:45",
+    "history": [
+      "Pedido criado em 2025-04-22 12:30:45",
+      "Pedido executado em 2025-04-22 12:30:45"
+    ]
   },
   {
-    "id": "ORD-0005",
-    "asset": "BBAS3",
-    "side": "Compra",
-    "price": "45,10",
-    "amount": 80,
-    "amountLeft": 20,
-    "status": "Parcial",
-    "dateAndTime": "2025-04-24 11:01:55"
+    "id": "ORD-0010",
+    "asset": "USIM5",
+    "side": "Venda",
+    "price": "10,20",
+    "amount": 700,
+    "amountLeft": 700,
+    "status": "Aberta",
+    "dateAndTime": "2025-04-24 07:55:32",
+    "history": ["Pedido criado em 2025-04-24 07:55:32"]
   },
   {
-    "id": "ORD-0005",
-    "asset": "BBAS3",
+    "id": "ORD-0011",
+    "asset": "SUZB3",
     "side": "Compra",
-    "price": "45,10",
-    "amount": 80,
-    "amountLeft": 20,
+    "price": "38,40",
+    "amount": 300,
+    "amountLeft": 100,
     "status": "Parcial",
-    "dateAndTime": "2025-04-24 11:01:55"
+    "dateAndTime": "2025-04-23 15:20:12",
+    "history": [
+      "Pedido criado em 2025-04-23 15:20:12",
+      "Pedido parcial em 2025-04-23 15:20:12"
+    ]
   },
   {
-    "id": "ORD-0005",
-    "asset": "BBAS3",
-    "side": "Compra",
-    "price": "45,10",
-    "amount": 80,
-    "amountLeft": 20,
-    "status": "Parcial",
-    "dateAndTime": "2025-04-24 11:01:55"
+    "id": "ORD-0012",
+    "asset": "JBSS3",
+    "side": "Venda",
+    "price": "23,30",
+    "amount": 450,
+    "amountLeft": 0,
+    "status": "Cancelada",
+    "dateAndTime": "2025-04-22 17:45:27",
+    "history": [
+      "Pedido criado em 2025-04-22 17:45:27",
+      "Pedido cancelado em 2025-04-22 17:45:27"
+    ]
   }
 ]
