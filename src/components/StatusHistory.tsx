@@ -16,12 +16,13 @@ export function StatusHistory({ id }: StatusHistoryProps) {
     try {
       setLoading(true);
       const res = await fetch(`/api/status-history?id=${id}`);
-
       const data = await res.json();
+
       setHistory(data.history); // assumes format: { history: string[] }
       setLoading(false);
     } catch (error) {
       console.log('ERROR', error);
+
       setLoading(false);
       setShow(false);
     }

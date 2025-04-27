@@ -25,6 +25,7 @@ import { useState } from 'react';
 import { Input } from '../ui/input';
 import { Label } from '@radix-ui/react-label';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 interface DatagridProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -203,12 +204,17 @@ export function Datagrid<TData, TValue>({
                 );
               })
             ) : (
-              <TableRow>
+              <TableRow className="">
                 <TableCell
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  Sem resultados.
+                  <div className="flex flex-col items-center justify-center gap-2">
+                    Sem resultados.
+                    <Button className="w-xsm bg-slate-800">
+                      <Link href="/create-order">Criar nova ordem</Link>
+                    </Button>
+                  </div>
                 </TableCell>
               </TableRow>
             )}
