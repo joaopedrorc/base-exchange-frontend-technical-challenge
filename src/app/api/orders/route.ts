@@ -19,10 +19,18 @@ export async function GET(): Promise<Order[]> {
   }
 }
 
-export async function POST(req: Request) {
-  const data = await req.body;
+export async function POST(request: Request) {
+  const data = await request.json();
 
   console.log('DATA', data);
 
-  return Response.json({ status: 200, body: data });
+  const newOrder = {
+    id: `ORD-01`,
+    data,
+  };
+
+  return new Response(JSON.stringify(newOrder), {
+    headers: { 'Content-Type': 'application/json' },
+    status: 201,
+  });
 }

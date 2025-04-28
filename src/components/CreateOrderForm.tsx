@@ -23,6 +23,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 const formSchema = z.object({
   asset: z.string().min(1, 'Ativo é obrigatório'),
@@ -54,22 +55,30 @@ export function CreateOrderForm() {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    try {
-      setLoading(true);
-      const res = await fetch('/api/orders', {
-        method: 'POST',
-        body: JSON.stringify(values),
-      });
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    async function createOrder() {
+      try {
+        setLoading(true);
+        const res = await fetch('/api/orders', {
+          method: 'POST',
+          body: JSON.stringify(values),
+        });
 
-      const data = await res.json();
-      console.log(data);
-      setLoading(false);
-    } catch (error) {
-      console.log('ERROR', error);
+        const data = await res.json();
+        console.log(data);
+        toast.success(`Ordem de ${values.side} criada com sucesso!`);
+        setLoading(false);
+      } catch (error) {
+        console.log('ERROR', error);
 
-      setLoading(false);
+        toast.error(
+          `Atenção: ordem de ${values.side} não foi criada. Tente novamente mais tarde.`
+        );
+        setLoading(false);
+      }
     }
+
+    createOrder();
 
     console.log(values);
   }
