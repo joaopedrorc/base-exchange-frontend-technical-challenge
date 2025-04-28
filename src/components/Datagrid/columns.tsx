@@ -3,17 +3,7 @@
 import { ColumnDef } from '@tanstack/react-table';
 import { ArrowUpDown } from 'lucide-react';
 import { Button } from '../ui/button';
-
-export type Order = {
-  id: string;
-  asset: string;
-  side: string;
-  price: string;
-  amount: number;
-  amountLeft: number;
-  status: 'Aberta' | 'Parcial' | 'Executada' | 'Cancelada';
-  dateAndTime: string;
-};
+import { Order } from '@/types';
 
 export const columns: ColumnDef<Order>[] = [
   {

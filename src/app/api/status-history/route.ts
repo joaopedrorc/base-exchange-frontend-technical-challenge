@@ -1,7 +1,7 @@
 // app/api/status-history/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
-import { Order } from '@/components/Datagrid/columns';
+import { Order } from '@/types';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);

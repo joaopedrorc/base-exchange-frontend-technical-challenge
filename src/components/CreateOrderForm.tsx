@@ -24,24 +24,8 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { toast } from 'sonner';
-
-const formSchema = z.object({
-  asset: z.string().min(1, 'Ativo é obrigatório'),
-  side: z.enum(['Compra', 'Venda'], {
-    required_error: 'Selecione uma opção',
-  }),
-  price: z
-    .string()
-    .regex(
-      /^(\s?R\$)?\s?\d{1,3}(\.\d{3})*(,\d{2})?$/,
-      'Preço inválido, use o formato R$ 1.000,00'
-    )
-    .min(1, 'Preço é obrigatório'),
-  amount: z
-    .string()
-    .min(1, { message: 'Mínimo de 1 unidade' })
-    .max(1000, { message: 'Máximo de 1000 unidades' }),
-});
+import { formatInteger, formatToBRL } from '@/lib/formatter';
+import { formSchema } from '@/lib/schema';
 
 export function CreateOrderForm() {
   const [loading, setLoading] = useState(false);
@@ -55,52 +39,33 @@ export function CreateOrderForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    async function createOrder() {
-      try {
-        setLoading(true);
-        const res = await fetch('/api/orders', {
-          method: 'POST',
-          body: JSON.stringify(values),
-        });
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true);
 
-        const data = await res.json();
-        console.log(data);
-        toast.success(`Ordem de ${values.side} criada com sucesso!`);
-        setLoading(false);
-      } catch (error) {
-        console.log('ERROR', error);
+    try {
+      const res = await fetch('/api/orders', {
+        method: 'POST',
+        body: JSON.stringify(values),
+      });
 
-        toast.error(
-          `Atenção: ordem de ${values.side} não foi criada. Tente novamente mais tarde.`
+      const payload = await res.json();
+
+      if (!res.ok) {
+        return toast.error(
+          `Erro: ${payload?.errors ? JSON.stringify(payload.errors) : 'Não foi possível criar a ordem.'}`
         );
-        setLoading(false);
       }
+
+      toast.success(`Ordem de ${values.side} criada com sucesso!`);
+    } catch (error) {
+      console.log('ERROR', error);
+
+      toast.error(
+        `Atenção: ordem de ${values.side} não foi criada. Tente novamente mais tarde.`
+      );
+    } finally {
+      setLoading(false);
     }
-
-    createOrder();
-
-    console.log(values);
-  }
-
-  function formatToBRL(value: string) {
-    const numericValue = value.replace(/\D/g, '');
-    const amount = parseInt(numericValue || '0', 10) / 100;
-    return amount.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    });
-  }
-
-  function formatInteger(value: string) {
-    let numericValue = value.replace(/\D/g, '');
-    let intValue = parseInt(numericValue || '0', 10);
-
-    if (intValue > 1000) {
-      intValue = 1000;
-    }
-
-    return intValue > 0 ? intValue.toString() : '';
   }
 
   return (

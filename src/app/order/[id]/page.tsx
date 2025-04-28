@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { promises as fs } from 'fs';
 import { NextResponse } from 'next/server';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Order } from '@/components/Datagrid/columns';
+import { Order } from '@/types';
 import { Badge } from '@/components/ui/badge';
 import { redirect } from 'next/navigation';
 import { StatusHistory } from '@/components/StatusHistory';

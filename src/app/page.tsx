@@ -1,8 +1,9 @@
-import { Order, columns } from '@/components/Datagrid/columns';
+import { Order } from '@/types';
 import { Datagrid } from '@/components/Datagrid/Datagrid';
 
 import { promises as fs } from 'fs';
 import { NextResponse } from 'next/server';
+import { columns } from '@/components/Datagrid/columns';
 
 export async function getData(): Promise<Order[]> {
   try {
