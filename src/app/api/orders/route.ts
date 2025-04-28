@@ -1,24 +1,27 @@
-import { Order } from '@/types';
-
-import { promises as fs } from 'fs';
-import { NextResponse } from 'next/server';
+import fs from 'fs';
 import { formSchema } from '@/lib/schema';
 
-export async function GET(): Promise<Order[]> {
-  try {
-    const file = await fs.readFile(
-      process.cwd() + '/src/mocks/data.json',
-      'utf8'
-    );
-    const data = JSON.parse(file);
-    return data;
-  } catch (error) {
-    console.error('Error reading or parsing data:', error);
-    NextResponse.json({ message: 'Error fetching data' }, { status: 500 });
+export async function GET(): Promise<Response> {
+  const data = JSON.parse(
+    fs.readFileSync(process.cwd() + '/src/mocks/data.json', 'utf-8')
+  );
 
-    return [];
-  }
+  return new Response(JSON.stringify(data), {
+    headers: { 'Content-Type': 'application/json' },
+    status: 200,
+  });
 }
+
+// Order is created with status "Aberta"
+// Order is executed (status : "Executada") when there is an open order
+// with opposite side (buy/sell) and "price" igual or grader and there is
+// enough amount
+
+// when the counterpart has the same amount and grater or same price both are
+// executed "Status: Executada"
+
+// When the counterpart amount is grater the original order is executed with status
+// partial and its amount updated
 
 export async function POST(request: Request) {
   const data = await request.json();

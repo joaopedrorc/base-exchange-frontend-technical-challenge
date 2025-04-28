@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import { promises as fs } from 'fs';
+import fs from 'fs';
 import { NextResponse } from 'next/server';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Order } from '@/types';
@@ -11,11 +11,9 @@ import { StatusHistory } from '@/components/StatusHistory';
 
 export async function getOrderDetails(orderId: string): Promise<Order> {
   try {
-    const file = await fs.readFile(
-      process.cwd() + '/src/mocks/data.json',
-      'utf8'
+    const data = JSON.parse(
+      fs.readFileSync(process.cwd() + '/src/mocks/data.json', 'utf-8')
     );
-    const data = JSON.parse(file);
 
     const filteredData = data.filter((item: Order) => item.id === orderId);
 

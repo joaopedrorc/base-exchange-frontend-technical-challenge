@@ -1,17 +1,16 @@
 import { Order } from '@/types';
 import { Datagrid } from '@/components/Datagrid/Datagrid';
 
-import { promises as fs } from 'fs';
+import fs from 'fs';
 import { NextResponse } from 'next/server';
 import { columns } from '@/components/Datagrid/columns';
 
 export async function getData(): Promise<Order[]> {
   try {
-    const file = await fs.readFile(
-      process.cwd() + '/src/mocks/data.json',
-      'utf8'
+    const data = JSON.parse(
+      fs.readFileSync(process.cwd() + '/src/mocks/data.json', 'utf-8')
     );
-    const data = JSON.parse(file);
+
     return data;
   } catch (error) {
     console.error('Error reading or parsing data:', error);
@@ -24,8 +23,11 @@ export async function getData(): Promise<Order[]> {
 export default async function Home() {
   const data = await getData();
 
+  // const data = await fetch('http://localhost:3000/api/orders');
+  // const data = JSON.parse(response);
+
   return (
-    <div className="">
+    <div>
       <Datagrid columns={columns} data={data} />
     </div>
   );
