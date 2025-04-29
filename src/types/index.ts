@@ -7,4 +7,5 @@ export type Order = {
   amountLeft: number;
   status: 'Aberta' | 'Parcial' | 'Executada' | 'Cancelada';
   dateAndTime: string;
+  history: string[];
 };

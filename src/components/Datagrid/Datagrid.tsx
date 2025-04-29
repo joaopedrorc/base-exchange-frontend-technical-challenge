@@ -26,6 +26,7 @@ import { Input } from '../ui/input';
 import { Label } from '@radix-ui/react-label';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Order } from '@/types';
 
 interface DatagridProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -186,7 +187,7 @@ export function Datagrid<TData, TValue>({
                     }
                     onClick={() => {
                       setSelectedRow(row.original);
-                      router.push(`/order/${row.original.id}`);
+                      router.push(`/order/${(row.original as Order).id}`);
                     }}
                   >
                     {row.getVisibleCells().map((cell) => (

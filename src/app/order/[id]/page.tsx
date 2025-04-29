@@ -10,21 +10,19 @@ import { redirect } from 'next/navigation';
 import { StatusHistory } from '@/components/StatusHistory';
 import { badgeTheme } from '@/lib/utils';
 import { Modal } from '@/components/Modal';
+import { filePath } from '@/lib/constants';
 
-export async function getOrderDetails(orderId: string): Promise<Order> {
+export async function getOrderDetails(orderId: string): Promise<Order | null> {
   try {
-    const data = JSON.parse(
-      fs.readFileSync(process.cwd() + '/src/mocks/data.json', 'utf-8')
-    );
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
     const filteredData = data.filter((item: Order) => item.id === orderId);
 
     return filteredData[0];
   } catch (error) {
     console.error('Error reading or parsing data:', error);
-    NextResponse.json({ message: 'Error fetching data' }, { status: 500 });
 
-    return [];
+    return null;
   }
 }
 

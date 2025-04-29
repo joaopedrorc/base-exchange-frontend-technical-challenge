@@ -1,9 +1,8 @@
-import { promises as fs } from 'fs';
+import fs from 'fs/promises';
 import { formSchema } from '@/lib/schema';
 import { Order } from '@/types';
-import { redirect } from 'next/navigation';
+import { filePath } from '@/lib/constants';
 
-const filePath = process.cwd() + '/src/mocks/data.json';
 function parsePrice(price: string) {
   return Number(
     price

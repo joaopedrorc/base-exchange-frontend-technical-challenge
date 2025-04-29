@@ -1,30 +1,24 @@
 import { Order } from '@/types';
 import { Datagrid } from '@/components/Datagrid/Datagrid';
 
-import fs from 'fs';
-import { NextResponse } from 'next/server';
+import fs from 'fs/promises';
 import { columns } from '@/components/Datagrid/columns';
+import { filePath } from '@/lib/constants';
 
 export async function getData(): Promise<Order[]> {
   try {
-    const data = JSON.parse(
-      fs.readFileSync(process.cwd() + '/src/mocks/data.json', 'utf-8')
-    );
+    const file = await fs.readFile(filePath, 'utf-8');
 
+    const data: Order[] = JSON.parse(file);
     return data;
   } catch (error) {
     console.error('Error reading or parsing data:', error);
-    NextResponse.json({ message: 'Error fetching data' }, { status: 500 });
-
     return [];
   }
 }
 
 export default async function Home() {
   const data = await getData();
-
-  // const data = await fetch('http://localhost:3000/api/orders');
-  // const data = JSON.parse(response);
 
   return (
     <div>
