@@ -211,7 +211,7 @@ export function Datagrid<TData, TValue>({
                   className="h-24 text-center"
                 >
                   <div className="flex flex-col items-center justify-center gap-2">
-                    Sem resultados.
+                    <p>Sem resultados.</p>
                     <Button className="w-xsm bg-slate-800">
                       <Link href="/create-order">Criar nova ordem</Link>
                     </Button>

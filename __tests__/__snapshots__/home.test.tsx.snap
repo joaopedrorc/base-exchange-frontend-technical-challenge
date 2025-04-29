@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page renders Home unchanged 1`] = `
+{
+  "$$typeof": Symbol(react.transitional.element),
+  "_owner": null,
+  "_store": {},
+  "key": null,
+  "props": {
+    "children": {
+      "$$typeof": Symbol(react.transitional.element),
+      "_owner": null,
+      "_store": {},
+      "key": null,
+      "props": {
+        "columns": [
+          {
+            "accessorKey": "id",
+            "header": "ID",
+          },
+          {
+            "accessorKey": "asset",
+            "header": "Ação",
+          },
+          {
+            "accessorKey": "side",
+            "header": "Operação",
+          },
+          {
+            "accessorKey": "price",
+            "cell": [Function],
+            "header": [Function],
+          },
+          {
+            "accessorKey": "amount",
+            "header": [Function],
+          },
+          {
+            "accessorKey": "amountLeft",
+            "header": "Restante",
+          },
+          {
+            "accessorKey": "status",
+            "cell": [Function],
+            "header": "Status",
+          },
+          {
+            "accessorKey": "dateAndTime",
+            "header": "Data/Hora",
+          },
+        ],
+        "data": [
+          {
+            "amount": 100,
+            "amountLeft": 100,
+            "asset": "PETR4",
+            "dateAndTime": "24/04/2025, 09:15:32",
+            "history": [
+              "Pedido criado em 24/04/2025, 09:15:32",
+            ],
+            "id": "ORD-1",
+            "price": "28,45",
+            "side": "Compra",
+            "status": "Aberta",
+          },
+          {
+            "amount": 150,
+            "amountLeft": 150,
+            "asset": "VALE3",
+            "dateAndTime": "24/04/2025, 10:42:11",
+            "history": [
+              "Pedido criado em 24/04/2025, 10:42:11",
+            ],
+            "id": "ORD-2",
+            "price": "67,20",
+            "side": "Venda",
+            "status": "Aberta",
+          },
+          {
+            "amount": 200,
+            "amountLeft": 0,
+            "asset": "ITUB4",
+            "dateAndTime": "23/04/2025, 16:03:45",
+            "history": [
+              "Pedido criado em 23/04/2025, 16:03:45",
+              "Ordem totalmente executada em 23/04/2025, 16:03:45",
+            ],
+            "id": "ORD-3",
+            "price": "29,90",
+            "side": "Compra",
+            "status": "Executada",
+          },
+          {
+            "amount": 300,
+            "amountLeft": 0,
+            "asset": "B3SA3",
+            "dateAndTime": "22/04/2025, 13:20:17",
+            "history": [
+              "Pedido criado em 22/04/2025, 13:20:17",
+              "Ordem cancelada em 22/04/2025, 13:20:17",
+            ],
+            "id": "ORD-4",
+            "price": "12,75",
+            "side": "Venda",
+            "status": "Cancelada",
+          },
+          {
+            "amount": 80,
+            "amountLeft": 80,
+            "asset": "BBAS3",
+            "dateAndTime": "24/04/2025, 11:01:55",
+            "history": [
+              "Pedido criado em 24/04/2025, 11:01:55",
+            ],
+            "id": "ORD-5",
+            "price": "45,10",
+            "side": "Compra",
+            "status": "Aberta",
+          },
+        ],
+      },
+      "type": [Function],
+    },
+  },
+  "type": "div",
+}
+`;

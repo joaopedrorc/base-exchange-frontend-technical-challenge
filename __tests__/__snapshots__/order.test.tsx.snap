@@ -1,0 +1,398 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderDetail page renders OrderDetail unchanged 1`] = `
+{
+  "$$typeof": Symbol(react.transitional.element),
+  "_owner": null,
+  "_store": {},
+  "key": null,
+  "props": {
+    "children": [
+      {
+        "$$typeof": Symbol(react.transitional.element),
+        "_owner": null,
+        "_store": {},
+        "key": null,
+        "props": {
+          "children": {
+            "$$typeof": Symbol(react.transitional.element),
+            "_owner": null,
+            "_store": {},
+            "key": null,
+            "props": {
+              "children": {
+                "$$typeof": Symbol(react.transitional.element),
+                "_owner": null,
+                "_store": {},
+                "key": null,
+                "props": {
+                  "children": [
+                    {
+                      "$$typeof": Symbol(react.transitional.element),
+                      "_owner": null,
+                      "_store": {},
+                      "key": null,
+                      "props": {},
+                      "type": {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "render": [Function],
+                      },
+                    },
+                    {
+                      "$$typeof": Symbol(react.transitional.element),
+                      "_owner": null,
+                      "_store": {},
+                      "key": null,
+                      "props": {
+                        "children": "Votar",
+                        "className": "text-sm",
+                      },
+                      "type": "span",
+                    },
+                  ],
+                  "className": "flex flex-row items-center gap-1",
+                  "href": "/",
+                },
+                "type": {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "default": [Circular],
+                  "render": [Function],
+                  "useLinkStatus": [Function],
+                },
+              },
+              "className": "bg-slate-800",
+            },
+            "type": [Function],
+          },
+          "className": "mb-4",
+        },
+        "type": "div",
+      },
+      {
+        "$$typeof": Symbol(react.transitional.element),
+        "_owner": null,
+        "_store": {},
+        "key": null,
+        "props": {
+          "children": [
+            {
+              "$$typeof": Symbol(react.transitional.element),
+              "_owner": null,
+              "_store": {},
+              "key": null,
+              "props": {
+                "children": {
+                  "$$typeof": Symbol(react.transitional.element),
+                  "_owner": null,
+                  "_store": {},
+                  "key": null,
+                  "props": {
+                    "children": [
+                      "Operação #",
+                      "ORD-1",
+                    ],
+                    "className": "text-slate-900",
+                  },
+                  "type": [Function],
+                },
+              },
+              "type": [Function],
+            },
+            {
+              "$$typeof": Symbol(react.transitional.element),
+              "_owner": null,
+              "_store": {},
+              "key": null,
+              "props": {
+                "children": [
+                  {
+                    "$$typeof": Symbol(react.transitional.element),
+                    "_owner": null,
+                    "_store": {},
+                    "key": null,
+                    "props": {
+                      "children": [
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": "Código da ação:",
+                            "className": "font-medium",
+                          },
+                          "type": "span",
+                        },
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": "PETR4",
+                          },
+                          "type": "span",
+                        },
+                      ],
+                      "className": "flex justify-between",
+                    },
+                    "type": "div",
+                  },
+                  {
+                    "$$typeof": Symbol(react.transitional.element),
+                    "_owner": null,
+                    "_store": {},
+                    "key": null,
+                    "props": {
+                      "children": [
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": "Tipo de operação:",
+                            "className": "font-medium",
+                          },
+                          "type": "span",
+                        },
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": "Compra",
+                          },
+                          "type": "span",
+                        },
+                      ],
+                      "className": "flex justify-between",
+                    },
+                    "type": "div",
+                  },
+                  {
+                    "$$typeof": Symbol(react.transitional.element),
+                    "_owner": null,
+                    "_store": {},
+                    "key": null,
+                    "props": {
+                      "children": [
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": "Preço da ação:",
+                            "className": "font-medium",
+                          },
+                          "type": "span",
+                        },
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": [
+                              "R$ ",
+                              "28,45",
+                            ],
+                          },
+                          "type": "span",
+                        },
+                      ],
+                      "className": "flex justify-between",
+                    },
+                    "type": "div",
+                  },
+                  {
+                    "$$typeof": Symbol(react.transitional.element),
+                    "_owner": null,
+                    "_store": {},
+                    "key": null,
+                    "props": {
+                      "children": [
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": "Quantidade:",
+                            "className": "font-medium",
+                          },
+                          "type": "span",
+                        },
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": 100,
+                          },
+                          "type": "span",
+                        },
+                      ],
+                      "className": "flex justify-between",
+                    },
+                    "type": "div",
+                  },
+                  {
+                    "$$typeof": Symbol(react.transitional.element),
+                    "_owner": null,
+                    "_store": {},
+                    "key": null,
+                    "props": {
+                      "children": [
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": "Quantidade restante:",
+                            "className": "font-medium",
+                          },
+                          "type": "span",
+                        },
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": 100,
+                          },
+                          "type": "span",
+                        },
+                      ],
+                      "className": "flex justify-between",
+                    },
+                    "type": "div",
+                  },
+                  {
+                    "$$typeof": Symbol(react.transitional.element),
+                    "_owner": null,
+                    "_store": {},
+                    "key": null,
+                    "props": {
+                      "children": [
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": "Status:",
+                            "className": "font-medium",
+                          },
+                          "type": "span",
+                        },
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": "Aberta",
+                            "className": "bg-blue-400",
+                          },
+                          "type": [Function],
+                        },
+                      ],
+                      "className": "flex justify-between",
+                    },
+                    "type": "div",
+                  },
+                  {
+                    "$$typeof": Symbol(react.transitional.element),
+                    "_owner": null,
+                    "_store": {},
+                    "key": null,
+                    "props": {
+                      "children": [
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": "Data/Hora:",
+                            "className": "font-medium",
+                          },
+                          "type": "span",
+                        },
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "children": "24/04/2025, 09:15:32",
+                          },
+                          "type": "span",
+                        },
+                      ],
+                      "className": "flex justify-between",
+                    },
+                    "type": "div",
+                  },
+                  {
+                    "$$typeof": Symbol(react.transitional.element),
+                    "_owner": null,
+                    "_store": {},
+                    "key": null,
+                    "props": {
+                      "children": [
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {
+                            "orderId": "ORD-1",
+                            "orderStatus": "Aberta",
+                          },
+                          "type": [Function],
+                        },
+                        {
+                          "$$typeof": Symbol(react.transitional.element),
+                          "_owner": null,
+                          "_store": {},
+                          "key": null,
+                          "props": {},
+                          "type": "span",
+                        },
+                      ],
+                      "className": "my-4 flex justify-between",
+                    },
+                    "type": "div",
+                  },
+                  {
+                    "$$typeof": Symbol(react.transitional.element),
+                    "_owner": null,
+                    "_store": {},
+                    "key": null,
+                    "props": {
+                      "id": "ORD-1",
+                    },
+                    "type": [Function],
+                  },
+                ],
+                "className": "space-y-2 text-slate-800",
+              },
+              "type": [Function],
+            },
+          ],
+          "className": "rounded-2xl border-slate-200 bg-slate-50 p-4 shadow-md",
+        },
+        "type": [Function],
+      },
+    ],
+  },
+  "type": "div",
+}
+`;
