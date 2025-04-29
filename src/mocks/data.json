@@ -8,7 +8,9 @@
     "amountLeft": 100,
     "status": "Aberta",
     "dateAndTime": "24/04/2025, 09:15:32",
-    "history": ["Pedido criado em 24/04/2025, 09:15:32"]
+    "history": [
+      "Pedido criado em 24/04/2025, 09:15:32"
+    ]
   },
   {
     "id": "ORD-2",
@@ -19,7 +21,9 @@
     "amountLeft": 150,
     "status": "Aberta",
     "dateAndTime": "24/04/2025, 10:42:11",
-    "history": ["Pedido criado em 24/04/2025, 10:42:11"]
+    "history": [
+      "Pedido criado em 24/04/2025, 10:42:11"
+    ]
   },
   {
     "id": "ORD-3",
@@ -58,6 +62,8 @@
     "amountLeft": 80,
     "status": "Aberta",
     "dateAndTime": "24/04/2025, 11:01:55",
-    "history": ["Pedido criado em 24/04/2025, 11:01:55"]
+    "history": [
+      "Pedido criado em 24/04/2025, 11:01:55"
+    ]
   }
 ]

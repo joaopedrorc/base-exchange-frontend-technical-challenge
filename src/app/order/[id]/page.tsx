@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { redirect } from 'next/navigation';
 import { StatusHistory } from '@/components/StatusHistory';
 import { badgeTheme } from '@/lib/utils';
+import { Modal } from '@/components/Modal';
 
 export async function getOrderDetails(orderId: string): Promise<Order> {
   try {
@@ -94,7 +95,12 @@ export default async function OrderDetail({
             <span className="font-medium">Data/Hora:</span>
             <span>{dateAndTime}</span>
           </div>
-
+          {(status === 'Aberta' || status === 'Parcial') && (
+            <div className="my-4 flex justify-between">
+              <Modal orderId={dataId} orderStatus={status} />
+              <span />
+            </div>
+          )}
           <StatusHistory id={id} />
         </CardContent>
       </Card>

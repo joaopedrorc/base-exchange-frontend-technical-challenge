@@ -36,7 +36,7 @@ export function StatusHistory({ id }: StatusHistoryProps) {
   };
 
   return (
-    <div className="pt-4">
+    <div>
       <Button className="bg-slate-800" onClick={handleClick}>
         {show ? 'Ocultar histórico' : 'Mostrar histórico de status'}
       </Button>

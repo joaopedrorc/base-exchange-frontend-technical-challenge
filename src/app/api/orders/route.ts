@@ -1,21 +1,9 @@
 import { promises as fs } from 'fs';
-
 import { formSchema } from '@/lib/schema';
+import { Order } from '@/types';
+import { redirect } from 'next/navigation';
 
-export async function GET(): Promise<Response> {
-  const response = await fs.readFile(
-    process.cwd() + '/src/mocks/data.json',
-    'utf-8'
-  );
-
-  const data = JSON.parse(response);
-
-  return new Response(JSON.stringify(data), {
-    headers: { 'Content-Type': 'application/json' },
-    status: 200,
-  });
-}
-
+const filePath = process.cwd() + '/src/mocks/data.json';
 function parsePrice(price: string) {
   return Number(
     price
@@ -23,6 +11,17 @@ function parsePrice(price: string) {
       .replace(',', '.') // substitui vírgula decimal por ponto
       .replace(/[^\d.]/g, '') // remove qualquer caractere que não seja número ou ponto
   );
+}
+
+export async function GET(): Promise<Response> {
+  const response = await fs.readFile(filePath, 'utf-8');
+
+  const data = JSON.parse(response);
+
+  return new Response(JSON.stringify(data), {
+    headers: { 'Content-Type': 'application/json' },
+    status: 200,
+  });
 }
 
 export async function POST(request: Request) {
@@ -48,10 +47,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const response = await fs.readFile(
-    process.cwd() + '/src/mocks/data.json',
-    'utf-8'
-  );
+  const response = await fs.readFile(filePath, 'utf-8');
 
   const file = await JSON.parse(response);
 
@@ -61,7 +57,7 @@ export async function POST(request: Request) {
     id: `ORD-${newId}`,
     status: 'Aberta',
     amountLeft: Number(schemaValidationData.amount),
-    dateAndTime: new Date(),
+    dateAndTime: new Date().toLocaleString('pt-BR'),
     history: [`Pedido criado em ${new Date().toLocaleString('pt-BR')}`],
   };
 
@@ -132,14 +128,78 @@ export async function POST(request: Request) {
 
   updatedFile.push(newOrder);
 
-  await fs.writeFile(
-    process.cwd() + '/src/mocks/data.json',
-    JSON.stringify(updatedFile, null, 2),
-    'utf-8'
-  );
+  await fs.writeFile(filePath, JSON.stringify(updatedFile, null, 2), 'utf-8');
 
   return new Response(JSON.stringify(newOrder), {
     headers: { 'Content-Type': 'application/json' },
     status: 201,
   });
+}
+
+export async function PATCH(request: Request) {
+  try {
+    const { id } = await request.json();
+
+    if (!id) {
+      return new Response(
+        JSON.stringify({ error: 'ID da ordem é obrigatório.' }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+    }
+
+    const data = await fs.readFile(filePath, 'utf-8');
+    const orders = JSON.parse(data);
+
+    const orderIndex = orders.findIndex((order: Order) => order.id === id);
+
+    if (orderIndex === -1) {
+      return new Response(JSON.stringify({ error: 'Ordem não encontrada.' }), {
+        status: 404,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
+    const order = orders[orderIndex];
+
+    if (order.status === 'Cancelada' || order.status === 'Executada') {
+      return new Response(
+        JSON.stringify({ error: 'A ordem já está cancelada ou executada.' }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+    }
+
+    orders[orderIndex] = {
+      ...order,
+      status: 'Cancelada',
+      history: [
+        ...(order.history || []),
+        `Pedido cancelado em ${new Date().toLocaleString('pt-BR')}`,
+      ],
+    };
+
+    await fs.writeFile(filePath, JSON.stringify(orders, null, 2), 'utf-8');
+
+    return new Response(
+      JSON.stringify({ success: true, order: orders[orderIndex] }),
+      {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+  } catch (error) {
+    console.error('Erro ao cancelar ordem:', error);
+    return new Response(
+      JSON.stringify({ error: 'Erro interno do servidor.' }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+  }
 }
