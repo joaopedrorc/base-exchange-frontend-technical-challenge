@@ -5,7 +5,7 @@ import fs from 'fs/promises';
 import { columns } from '@/components/Datagrid/columns';
 import { filePath } from '@/lib/constants';
 
-export async function getData(): Promise<Order[]> {
+async function getData(): Promise<Order[]> {
   try {
     const file = await fs.readFile(filePath, 'utf-8');
 

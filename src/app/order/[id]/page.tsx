@@ -12,7 +12,7 @@ import { badgeTheme } from '@/lib/utils';
 import { Modal } from '@/components/Modal';
 import { filePath } from '@/lib/constants';
 
-export async function getOrderDetails(orderId: string): Promise<Order | null> {
+async function getOrderDetails(orderId: string): Promise<Order | null> {
   try {
     const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
