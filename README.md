@@ -4,7 +4,7 @@ Este é o módulo de **Gerenciamento de Ordens** da plataforma BASE Exchange. O 
 
 ## Iniciando o Projeto
 
-Primeiro, instale as bibliotecas do projeto
+Primeiro, instale as bibliotecas do projeto:
 
 ```bash
 yarn install
