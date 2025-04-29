@@ -4,6 +4,8 @@ import { ColumnDef } from '@tanstack/react-table';
 import { ArrowUpDown } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Order } from '@/types';
+import { Badge } from '../ui/badge';
+import { badgeTheme } from '@/lib/utils';
 
 export const columns: ColumnDef<Order>[] = [
   {
@@ -32,13 +34,9 @@ export const columns: ColumnDef<Order>[] = [
       );
     },
     cell: ({ row }) => {
-      const price = parseFloat(row.getValue('price'));
-      const formatted = new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL',
-      }).format(price);
+      const price: string = row.getValue('price');
 
-      return <div className="font-medium">{formatted}</div>;
+      return <div className="font-medium">R$ {price}</div>;
     },
   },
   {
@@ -62,6 +60,11 @@ export const columns: ColumnDef<Order>[] = [
   {
     accessorKey: 'status',
     header: 'Status',
+    cell: ({ row }) => {
+      const status: string = row.getValue('status');
+
+      return <Badge className={`${badgeTheme[status]} w-full`}>{status}</Badge>;
+    },
   },
   {
     accessorKey: 'dateAndTime',

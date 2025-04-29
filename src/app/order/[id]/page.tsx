@@ -8,6 +8,7 @@ import { Order } from '@/types';
 import { Badge } from '@/components/ui/badge';
 import { redirect } from 'next/navigation';
 import { StatusHistory } from '@/components/StatusHistory';
+import { badgeTheme } from '@/lib/utils';
 
 export async function getOrderDetails(orderId: string): Promise<Order> {
   try {
@@ -17,23 +18,7 @@ export async function getOrderDetails(orderId: string): Promise<Order> {
 
     const filteredData = data.filter((item: Order) => item.id === orderId);
 
-    //TODO: move this function to a utils/formatters.ts folder
-    const formatter = new Intl.DateTimeFormat('pt-br', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-    });
-
-    const sanitizedData = filteredData.map((item: Order) => {
-      const date = new Date(item.dateAndTime);
-      const ptBRDate = formatter.format(date);
-      return { ...item, dateAndTime: ptBRDate };
-    });
-
-    return sanitizedData[0];
+    return filteredData[0];
   } catch (error) {
     console.error('Error reading or parsing data:', error);
     NextResponse.json({ message: 'Error fetching data' }, { status: 500 });
@@ -64,13 +49,6 @@ export default async function OrderDetail({
     status,
     dateAndTime,
   } = data;
-
-  const badgeTheme: { [key: string]: string } = {
-    Aberta: 'bg-blue-400',
-    Parcial: 'bg-yellow-400',
-    Executada: 'bg-green-400',
-    Cancelada: 'bg-red-400',
-  };
 
   return (
     <div>

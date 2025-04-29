@@ -18,7 +18,7 @@ export function StatusHistory({ id }: StatusHistoryProps) {
       const res = await fetch(`/api/status-history?id=${id}`);
       const data = await res.json();
 
-      setHistory(data.history); // assumes format: { history: string[] }
+      setHistory(data.history);
       setLoading(false);
     } catch (error) {
       console.log('ERROR', error);

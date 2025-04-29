@@ -1,4 +1,3 @@
-// components/Footer.tsx
 export function Footer() {
   return (
     <footer className="mt-auto w-full bg-slate-800 px-4 py-3 text-white">
