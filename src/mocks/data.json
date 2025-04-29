@@ -18,25 +18,12 @@
     "side": "Venda",
     "price": "67,20",
     "amount": 150,
-    "amountLeft": 150,
-    "status": "Aberta",
+    "amountLeft": 75,
+    "status": "Parcial",
     "dateAndTime": "24/04/2025, 10:42:11",
     "history": [
-      "Pedido criado em 24/04/2025, 10:42:11"
-    ]
-  },
-  {
-    "id": "ORD-3",
-    "asset": "ITUB4",
-    "side": "Compra",
-    "price": "29,90",
-    "amount": 200,
-    "amountLeft": 0,
-    "status": "Executada",
-    "dateAndTime": "23/04/2025, 16:03:45",
-    "history": [
-      "Pedido criado em 23/04/2025, 16:03:45",
-      "Ordem totalmente executada em 23/04/2025, 16:03:45"
+      "Pedido criado em 24/04/2025, 10:42:11",
+      "Execução parcial contra ORD-4 em 29/04/2025, 15:24:32"
     ]
   },
   {
@@ -54,16 +41,121 @@
     ]
   },
   {
-    "id": "ORD-5",
-    "asset": "BBAS3",
+    "asset": "VALE3",
     "side": "Compra",
-    "price": "45,10",
-    "amount": 80,
-    "amountLeft": 80,
-    "status": "Aberta",
-    "dateAndTime": "24/04/2025, 11:01:55",
+    "price": "R$ 68,00",
+    "amount": "75",
+    "id": "ORD-4",
+    "status": "Executada",
+    "amountLeft": 0,
+    "dateAndTime": "29/04/2025, 15:24:32",
     "history": [
-      "Pedido criado em 24/04/2025, 11:01:55"
+      "Pedido criado em 29/04/2025, 15:24:32",
+      "Ordem totalmente executada com ORD-2 em 29/04/2025, 15:24:32"
+    ]
+  },
+  {
+    "id": "ORD-5",
+    "asset": "ITUB4",
+    "side": "Compra",
+    "price": "R$ 28,50",
+    "amount": 100,
+    "amountLeft": 100,
+    "status": "Aberta",
+    "dateAndTime": "29/04/2025, 15:30:00",
+    "history": [
+      "Pedido criado em 29/04/2025, 15:30:00"
+    ]
+  },
+  {
+    "id": "ORD-6",
+    "asset": "BBDC4",
+    "side": "Venda",
+    "price": "R$ 23,75",
+    "amount": 150,
+    "amountLeft": 150,
+    "status": "Aberta",
+    "dateAndTime": "29/04/2025, 15:35:00",
+    "history": [
+      "Pedido criado em 29/04/2025, 15:35:00"
+    ]
+  },
+  {
+    "id": "ORD-7",
+    "asset": "WEGE3",
+    "side": "Compra",
+    "price": "R$ 36,10",
+    "amount": 120,
+    "amountLeft": 120,
+    "status": "Aberta",
+    "dateAndTime": "29/04/2025, 15:40:00",
+    "history": [
+      "Pedido criado em 29/04/2025, 15:40:00"
+    ]
+  },
+  {
+    "id": "ORD-8",
+    "asset": "ABEV3",
+    "side": "Venda",
+    "price": "R$ 14,30",
+    "amount": 200,
+    "amountLeft": 200,
+    "status": "Aberta",
+    "dateAndTime": "29/04/2025, 15:45:00",
+    "history": [
+      "Pedido criado em 29/04/2025, 15:45:00"
+    ]
+  },
+  {
+    "id": "ORD-9",
+    "asset": "RENT3",
+    "side": "Compra",
+    "price": "R$ 59,90",
+    "amount": 60,
+    "amountLeft": 60,
+    "status": "Aberta",
+    "dateAndTime": "29/04/2025, 15:50:00",
+    "history": [
+      "Pedido criado em 29/04/2025, 15:50:00"
+    ]
+  },
+  {
+    "id": "ORD-10",
+    "asset": "SUZB3",
+    "side": "Venda",
+    "price": "R$ 52,00",
+    "amount": 90,
+    "amountLeft": 90,
+    "status": "Aberta",
+    "dateAndTime": "29/04/2025, 15:55:00",
+    "history": [
+      "Pedido criado em 29/04/2025, 15:55:00"
+    ]
+  },
+  {
+    "id": "ORD-11",
+    "asset": "RADL3",
+    "side": "Compra",
+    "price": "R$ 27,45",
+    "amount": 160,
+    "amountLeft": 160,
+    "status": "Aberta",
+    "dateAndTime": "29/04/2025, 16:00:00",
+    "history": [
+      "Pedido criado em 29/04/2025, 16:00:00"
+    ]
+  },
+  {
+    "id": "ORD-9",
+    "asset": "RENT3",
+    "side": "Compra",
+    "price": "R$ 59,90",
+    "amount": 60,
+    "amountLeft": 60,
+    "status": "Aberta",
+    "dateAndTime": "29/04/2025, 15:50:00",
+    "history": [
+      "Pedido criado em 29/04/2025, 15:50:00"
     ]
   }
 ]
