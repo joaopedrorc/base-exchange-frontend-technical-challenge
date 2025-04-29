@@ -131,14 +131,6 @@ Ordem no livro:
 
 ---
 
-## 🧪 Conclusão
-
-✅ O seu código de matching está **correto**.
-
-🚨 Se as ordens não estiverem casando, **verifique o preço, o status e o ativo**.
-
----
-
 ## ✅ To-Do
 
 ### Etapa 0: Setup Inicial
